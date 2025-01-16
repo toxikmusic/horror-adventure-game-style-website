@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check localStorage for content and update the page if it exists
+            const roomTwoElement = document.getElementById("roomTwo");
+            const roomTwoUnlocked = localStorage.getItem("roomTwoUnlocked");
+
+            if (roomTwoUnlocked) {
+                roomTwoElement.outerHTML = roomTwoUnlocked;
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>The Haunted Mansion Map</h1>
+    <p>Click on a room to explore it. Locked rooms will be unlocked as you progress.</p>
+    <p><strong>Points:</strong> <span id="points">0</span></p>
+
+    <div class="map-container">
+        <div class="room" id="room1" onclick="navigateToRoom('room1.html')">Room 1</div>
+        <div class="room locked" id="roomTwo">Room 2 (locked)</div>
+        <div class="room locked" id="room3">Room 3 (Locked)</div>
+        <div class="room locked" id="secretRoom">Secret Room (Locked)</div>
+    </div>
+
+    <p><a href="index.html">Return to Home</a></p>
+</body>
+</html>

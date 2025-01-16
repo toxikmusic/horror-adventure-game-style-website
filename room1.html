@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Room 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select the button by its ID
+            const button = document.getElementById("room1btn");
+
+            // Attach the event listener for the button click
+            button.addEventListener('click', function () {
+                localStorage.setItem("roomTwoUnlocked", '<div class="room" id="room2" onclick="navigateToRoom(\'scareroom.html\')">Room 2</div>');
+                addPoints('room1');
+                window.location.href = 'map.html';
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Room 1</h1>
+    <p>You notice a strange mark on the wall... <span style="color: red;">6</span>.</p>
+    <button id="room1btn">Investigate (+10 Points)</button>
+    <p><a href="map.html">Return to Map</a></p>
+</body>
+
+</html>

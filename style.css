@@ -1,0 +1,45 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 2s;
+}
+
+h1 {
+    color: red;
+    text-shadow: 0 0 20px white;
+}
+
+a {
+    color: cyan;
+    text-decoration: none;
+}
+
+a:hover {
+    text-shadow: 0 0 10px cyan;
+}
+
+button {
+    background: darkred;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: crimson;
+}
+
+/* Flicker effect for horror rooms */
+body.flicker {
+    animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+    0% { background-color: black; }
+    50% { background-color: darkred; }
+    100% { background-color: black; }
+}
