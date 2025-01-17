@@ -1,9 +1,13 @@
+html {
+  background-color: black;
+}
 body {
     font-family: 'Courier New', monospace;
+    font-weight: bold;
     color: white;
     text-align: center;
     padding: 20px;
-    background-image: linear-gradient(to left, red, black);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 h1 {
@@ -12,12 +16,12 @@ h1 {
 }
 
 a {
-    color: cyan;
+    color: white;
     text-decoration: none;
 }
 
 a:hover {
-    text-shadow: 0 0 10px cyan;
+    text-shadow: 0 0 10px red;
 }
 
 button {
