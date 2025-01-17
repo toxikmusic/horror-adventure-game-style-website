@@ -7,12 +7,20 @@
     <script src="script.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Check localStorage for content and update the page if it exists
+            // Check localStorage for Room 2 content and update if it exists
             const roomTwoElement = document.getElementById("roomTwo");
             const roomTwoUnlocked = localStorage.getItem("roomTwoUnlocked");
 
             if (roomTwoUnlocked) {
                 roomTwoElement.outerHTML = roomTwoUnlocked;
+            }
+
+            // Check localStorage for Room 3 content and update if it exists
+            const roomThreeElement = document.getElementById("room3");
+            const roomThreeUnlocked = localStorage.getItem("roomThreeUnlocked");
+
+            if (roomThreeUnlocked) {
+                roomThreeElement.outerHTML = roomThreeUnlocked;
             }
         });
     </script>

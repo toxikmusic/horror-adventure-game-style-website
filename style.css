@@ -1,15 +1,14 @@
 body {
     font-family: 'Courier New', monospace;
-    background-color: black;
     color: white;
     text-align: center;
     padding: 20px;
-    transition: background-color 2s;
+    background-image: linear-gradient(to left, red, black);
 }
 
 h1 {
-    color: red;
-    text-shadow: 0 0 20px white;
+    color: white;
+    text-shadow: 0 0 20px red;
 }
 
 a {

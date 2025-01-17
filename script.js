@@ -8,19 +8,27 @@ document.addEventListener('DOMContentLoaded', () => {
     unlockRooms();
 });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            // Check localStorage for content and update the page if it exists
-            const roomTwo = document.getElementById("roomtwo");
-            const roomTwoUnlocked = localStorage.getItem("roomTwoUnlocked");
-
-            if (roomTwoUnlocked) {
-                roomTwoElement.innerHTML = roomTwoUnlocked;
-            }
-        });
+document.addEventListener('DOMContentLoaded', function () {
+    // Check localStorage for content and update the page if it exists
+    const roomTwo = document.getElementById("roomtwo");
+    const roomTwoUnlocked = localStorage.getItem("roomTwoUnlocked");
+    
+    if (roomTwoUnlocked) {
+        roomTwo.innerHTML = roomTwoUnlocked;
+    }
+    
+    const roomThree = document.getElementById("roomThree");
+    const roomThreeUnlocked = localStorage.getItem("roomThreeUnlocked");
+    
+    if (roomThreeUnlocked) {
+        roomThree.innerHTML = roomThreeUnlocked;
+    }
+});
 
 function navigateToRoom(roomPage) {
     window.location.href = roomPage;
 }
+
 
 function openNote() {
       const note = document.getElementById('folded-Note');
@@ -31,9 +39,9 @@ function openNote() {
     openNoteBtn.addEventListener('click', openNote);
 
 
-function addPoints(room) {
-    if (!roomsVisited.includes(room)) {
-        roomsVisited.push(room);
+function addPoints(roomId) {
+    if (!roomsVisited.includes(roomId)) {
+        roomsVisited.push(roomId);
         points += 10;
         localStorage.setItem("points", points);
         localStorage.setItem("roomsVisited", JSON.stringify(roomsVisited));
@@ -44,6 +52,8 @@ function addPoints(room) {
         alert("You already explored this room.");
     }
 }
+
+
 
 function solvePuzzle() {
     const userInput = document.getElementById('puzzleInput').value;

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>#open-Note {
+      text-decoration: underline;
+    }
+    .six {
+      color: red;
+      background-color: white;
+    }</style>
+</head>
+<body>
+    <h1>Room 3</h1>
+    <p>You enter the final room, a tall beast-like creature stands in the back corner, only being semi-illuminated by the torches mounted on the wall next to it.</p>
+    <p>it beckons you to come near, and reaches out a piece of folded parchment</p>
+        <p id="open-Note" onclick="openNote()">approach the creature?</p> <span id="folded-Note" style="color: white; display: none; background-color: red;">the number <p class="six">6</p> is drawn across the parchment, in what seems to be red paint..</span></p>
+    <button onclick="addPoints('room3')">Investigate (+10 Points)</button>
+    <p><a href="map.html">Return to Map</a></p>
+</body>
+</html>

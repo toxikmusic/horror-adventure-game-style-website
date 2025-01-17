@@ -1,3 +1,8 @@
+The error is occurring because the button element isn't found when the script runs. This happens because your script is in the `<head>` section and tries to access the button before the DOM is fully loaded. Here are two ways to fix this:
+
+1. Move the script to the end of the `<body>` tag (Recommended):
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +26,7 @@
     button.addEventListener('click', function() {
         try {
             localStorage.setItem(
-                "roomThreeUnlocked",
+                "roomThree",
                 '<div class="room" id="room3" onclick="navigateToRoom(\'room3.html\')">Room 3</div>'
             );
             addPoints('room2');
@@ -32,3 +37,27 @@
     </script>
 </body>
 </html>
+```
+
+2. Or wrap the code in a DOMContentLoaded event listener:
+
+```html
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.querySelector('#room2Btn');
+    button.addEventListener('click', function() {
+        try {
+            localStorage.setItem(
+                "roomThree",
+                '<div class="room" id="room3" onclick="navigateToRoom(\'room3.html\')">Room 3</div>'
+            );
+            addPoints('room2');
+        } catch (error) {
+            console.error('Error saving to localStorage:', error);
+        }
+    });
+});
+</script>
+```
+
+Either solution should resolve the error by ensuring the button element exists in the DOM before trying to add the event listener to it.
